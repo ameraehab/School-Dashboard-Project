@@ -36,16 +36,18 @@ const CountChart = () => {
         <Image src="/moreDark.png" alt="" width={20} height={20} />
       </div>
       {/*CHART*/}
-      <div className="relative w-full h-[75%]">
+      <div className="relative w-full h-[75%] min-h-[250px] flex justify-center items-center">
         <RadialBarChart
-          style={{
-            aspectRatio: 1.618,
-          }}
-          responsive
+          width={300}
+          height={300}
           cx="50%"
           cy="50%"
-          barSize={23}
+          innerRadius="40%"
+          outerRadius="85%"
+          barSize={20}
           data={data}
+          startAngle={90}
+          endAngle={-270}
         >
           <RadialBar
             label={{ position: "insideStart", fill: "#fff" }}
@@ -53,15 +55,15 @@ const CountChart = () => {
             dataKey="count"
           />
         </RadialBarChart>
+
         <Image
           src="/maleFemale.png"
           alt=""
+          width={65}
+          height={65}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          width={40}
-          height={40}
         />
       </div>
-
       <div className="flex justify-center gap-16 ">
         <div className="flex flex-col gap-1 items-center">
           <div className="w-5 h-5 bg-[#B8D6F3] rounded-full "></div>
